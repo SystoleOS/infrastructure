@@ -4,4 +4,4 @@ resources:
 - github.com/argoproj/argo-workflows/manifests/cluster-install
 - namespace.yaml
 - templates.yaml
-namespace: argo
+namespace: argocd

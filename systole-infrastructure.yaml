@@ -2,6 +2,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  name: sealedsecrets
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/SystoleOS/infrastructure
+    targetRevision: HEAD
+    path: sealed-secrets/base
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
   name: argocd
   namespace: argocd
 spec:
