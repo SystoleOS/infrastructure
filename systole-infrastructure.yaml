@@ -53,7 +53,7 @@ spec:
   source:
     repoURL: https://github.com/SystoleOS/infrastructure
     targetRevision: HEAD
-    path: argo-workflows/base
+    path: argo-workflows/manifests/cluster-install
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
