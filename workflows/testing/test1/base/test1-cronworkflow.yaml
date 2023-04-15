@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: test1-cronworkflow
+spec:
+  schedule: "0 0 * * *"
+  timezone: "UTC"
+  workflowSpec:
+    entrypoint: hello-world
+    templates:
+    - name: hello-world
+      container:
+        image: alpine:latest
+        command: [sh, -c]
+        args: ["echo 'Hello, World!'"]
