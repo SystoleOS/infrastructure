@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/SystoleOS/infrastructure
     targetRevision: HEAD
-    path: sealed-secrets/base
+    path: sealed-secrets/overlays/development
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
@@ -31,7 +31,7 @@ spec:
   source:
     repoURL: https://github.com/SystoleOS/infrastructure
     targetRevision: HEAD
-    path: argo-cd/base
+    path: argo-cd/overlays/development
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
@@ -53,7 +53,7 @@ spec:
   source:
     repoURL: https://github.com/SystoleOS/infrastructure
     targetRevision: HEAD
-    path: argo-workflows/base
+    path: argo-workflows/overlays/development
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
