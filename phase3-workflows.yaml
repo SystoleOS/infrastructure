@@ -2,17 +2,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: workflowsecrets
+  name: build-stage3
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/SystoleOS/infrastructure
-    targetRevision: HEAD
-    path: secrets
+    repoURL: https://github.com/SystoleOS/workflows
+    targetRevision: development
+    path: base
+    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: workflowsecrets
+    namespace: workflows
   syncPolicy:
     automated:
       selfHeal: true
